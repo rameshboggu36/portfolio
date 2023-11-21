@@ -3,149 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Personal Portfolio - Ramesh Boggu</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/86a5c7776e.js" crossorigin="anonymous"></script>
+    <title>Protfolio - Ramesh Boggu</title>
 </head>
 <body>
-<div id="header">
-    <div id="container">
-        <nav>
-            <img src="clg.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">My Projects</a></li>
-                <li><a href="#">Contact Me</a></li>
-            </ul>
-        </nav>
+
+    <!-- header section -->
+    <div class="header">
+        <div id="container">
+            <nav>
+                <img src="images/clg.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#" id="nhome">Home</a></li>
+                    <li><a href="#about" id="nabout">About</a></li>
+                    <li><a href="#services" id="nprojects">My Projects</a></li>
+                    <li><a href="#contact" id="ncontact">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
         <div class="header-text">
             <h1>Hi, I'm <span>Ramesh Boggu</span><br> from IIT Kanpur.</h1>
             <p>Pursuing M.Tech in Chemical Engineering</p>
         </div>
     </div>
-</div>
-<!-------about------------>
-<div class="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="image-PhotoRoom.png">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About</h1><br><br>
-                <p>Currently Pursuing M.Tech 2nd year in the department of Chemical Engineering at 
-                    IIT Kanpur. Working with Prof.Raghvendra Singh on <br>
-                    <p class="sub-title1">"Analysis of VEGF Cell Migration Pathway of Angeogenesis".</p>
-                </p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('expereince')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
+
+    <!-- about section -->
+    <div class="about" id="about">
+        <div class="container-about">
+            <h1 class="sub-title">About</h1><br><br>
+            <p id="abt_text">Currently Pursuing M.Tech 2nd year in the department of Chemical Engineering at 
+                IIT Kanpur. Working with <a href='https://iitk.ac.in/new/raghvendra-singh' target="_blank">Dr.Raghvendra Singh</a> on <br>
+                <p class="sub-title1">"Analysis of VEGF Cell Migration Pathway of Angeogenesis".</p>
+            </p>
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/image-PhotoRoom.png">
                 </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Proficient</span> <br>Python, MySQL</li>
-                        <li><span>Familiar</span> <br>Java, JavaScript</li>
-                        <li><span>Web</span> <br>HTML, CSS </li>
-                        <li><span>Utilities</span> <br>Malab, Ms-Excel, Power BI </li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="expereince">
-                    <ul>
-                        <li><span>Systems Engineer @ Infosys limited </span> <br><br><p>Jan'2020 - June'2021</p> <br>
-                        <h4>I have a professional background of 1.5 years as a Systems Engineer. My journey includes:
-                            <br><br>1. Served as a Junior Developer in the Omnihub-Dev Team for a year, during which I actively contributed to the creation of
-                            the backend Omnihub server for diverse client's needs.
-                            <br><br>2. Engaging in the training that spanned approximately 6 months, where I got knowledge of various courses such as Java, Data
-                            Structures and Algorithms (DSA), Database Management Systems (DBMS), and Omnihub-specific technologies.
-                        </h4></li>
-    
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2022-Ongoing</span> <br>M.Tech in Chemical Engineering - 9.17/10*
-                        <br>Indian Institute of Technology Kanpur</li>
-                        <li><span>2016-2020</span> <br>B.Tech in Petrochemical Engineering - 8.45/10
-                        <br>University College of Engineering: JNTU Kakinada (AUtonomous) </li>
-                        <li><span>2014-2016</span> <br>Intermediate - 97.4%
-                        <br>Aditya Junior College, Kakinada </li>
-                        <li><span>2014</span> <br>SSC - 9.8/10
-                        <br>Adarsha Vidyalaya EM High School, Pithapuram</li>
-                    </ul>
+                <div class="about-col-2">
+                    <div class="tab-titles">
+                        <button class="tab-links active-link" onclick="opentab('skills')" id="skills-btn"> Skills </button>
+                        <button class="tab-links" onclick="opentab('expereince')" id="expereince-btn"> Experience </button>
+                        <button class="tab-links" onclick="opentab('education')" id="education-btn"> Education </button>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Proficient</span> <br>Python, MySQL, DSA, Machine Learning</li>
+                            <li><span>Familiar</span> <br>Java, JavaScript</li>
+                            <li><span>Web</span> <br>HTML, CSS </li>
+                            <li><span>Utilities</span> <br>Matlab, Ms-Excel, Power BI </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="expereince">
+                        <ul>
+                            <li><span>Systems Engineer @ Infosys limited </span> <br><br><p>Jan'2020 - June'2021</p> <br>
+                            <h4>I have a professional background of 1.5 years as a Systems Engineer. My journey includes:
+                                <br><br>1. Served as a Junior Developer in the Omnihub-Dev Team for a year, during which I actively contributed to the creation of
+                                the backend Omnihub server for diverse client's needs.
+                                <br><br>2. Engaging in the training that spanned approximately 6 months, where I got knowledge of various courses such as Java, Data
+                                Structures and Algorithms (DSA), Database Management Systems (DBMS), and Omnihub-specific technologies.
+                            </h4></li>
+        
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-Ongoing</span> <br>M.Tech in Chemical Engineering -  <nobr style="color: #ff004f;">9.17</nobr> / 10*
+                            <br>Indian Institute of Technology Kanpur <nobr style="color: aqua;">(IIT Kanpur)</nobr></li>
+                            <li><span>2016-2020</span> <br>B.Tech in Petrochemical Engineering - <nobr style="color: #ff004f;">8.45</nobr> / 10
+                            <br>University College of Engineering Kakinada: <nobr style="color: aqua;">JNTU Kakinada</nobr> (Autonomous) </li>
+                            <li><span>2014-2016</span> <br>Intermediate - <nobr style="color: #ff004f;">97.4</nobr>%
+                            <br>Aditya Junior College, Kakinada </li>
+                            <li><span>2014</span> <br>SSC - <nobr style="color: #ff004f;">9.8</nobr> / 10
+                            <br>Adarsha Vidyalaya EM High School, Pithapuram</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<!---services-->
-<!-------My Projects-->
-<div id="services">
-    <div id="container">
-        <h1 class="sub-title"> My Projects</h1>
-        <div class="service-list">
-            <div>
-                <i class="fa-solid fa-flask"></i>
-                <h2>Chemical Engineering</h2>
-                <p>M.Tech Thesis:
-                    <br>Analysis of VEGF Cell Migration Pathway of Angiogenesis.</p>
-                <br>
+    <!-- projects -->
+    <div id="services">
+        <div id="container-ser">
+            <h1 class="sub-title-ser"> My Projects</h1>
+            <div class="service-list">
+                <div>
+                    <i class="fa-solid fa-flask"></i>
+                    <h2>Chemical Engineering</h2>
+                    <p>M.Tech Thesis:
+                        <br>Analysis of VEGF Cell Migration Pathway of Angiogenesis.</p>
+                    <br>
                     <p>B.Tech Project:
-                    <br>Production of Biodegradable plastics from Tapioca.</p>
-                
-            </div>
-            <div>
-                <i class="fa-solid fa-brain"></i>
-                <h2>Machine Learning</h2>
-                <a href="https://github.com/rameshboggu36/movie_recommendation_system">Movie Recommendation System</a>
-                <a href="https://github.com/rameshboggu36/customer_segregation">Customer Segregation</a>
-                <a href="https://github.com/rameshboggu36/credit_card_fraud_detection">Credit Card Fraud Detection</a>
-                <a href="https://github.com/rameshboggu36/breast_cancer_classification">Breast Cancer Classification</a>
-            </div>
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Development</h2>
-                <a href="https://github.com/rameshboggu36/portfolio.git">Portfolio</a><br>
-                <a href="https://github.com/rameshboggu36/tic_ta_toe">Tic-Tac-Toe</a><br>
-                <a href="https://github.com/rameshboggu36/qr_code_generator">QR-Code Generator</a><br>
-            </div>
-        </div>
-    </div>
-</div>
-<!----contact me-->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-envelope"></i> rameshboggu999@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> +91-7013510962</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+                        <br>Production of Biodegradable plastics from Tapioca.</p> 
                 </div>
-                <a href="my_resume.pdf" download class="btn btn2">Download CV</a>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
+                <div>
+                    <i class="fa-solid fa-brain"></i>
+                    <h2>Machine Learning</h2>
+                    <a href="https://movierecommendationsystem-ramesh.streamlit.app/" target="_blank">Movie Recommendation System</a>
+                    <a href="https://github.com/rameshboggu36/customer_segregation" target="_blank">Customer Segregation</a>
+                    <a href="https://github.com/rameshboggu36/credit_card_fraud_detection" target="_blank">Credit Card Fraud Detection</a>
+                    <!-- <a href="https://github.com/rameshboggu36/breast_cancer_classification">Breast Cancer Classification</a> -->
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <a href="https://rameshboggu36.github.io/portfolio/" target="_blank">Portfolio</a><br>
+                    <a href="https://rameshboggu36.github.io/tic_ta_toe/" target="_blank">Tic-Tac-Toe</a><br>
+                    <a href="https://rameshboggu36.github.io/qr_code_generator/" target="_blank">QR-Code Generator</a><br>
+                </div>
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p>Copyright © Ramesh. </p>
+    <!-- contact -->
+    <div id="contact">
+        <div class="container-con">
+            <h1 class="sub-title-con">Contact Me</h1>
+            <div class="row">
+                <div class="contact-left">
+                    <p><i class="fa-solid fa-envelope" ></i> rameshboggu999@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +91-7013510962</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ramesh-boggu-ba7722156/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my_res.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Ramesh. </p>
+        </div>
     </div>
-</div>
-<script src="code.js"></script>
+
+    <script type="text/javascript">    
+        window.onbeforeunload = function() { window.scrollTo(0,0); }
+        </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

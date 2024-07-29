@@ -1,156 +1,509 @@
 <!DOCTYPE html>
-<html lang="en">
+<html prefix="og: https://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/86a5c7776e.js" crossorigin="anonymous"></script>
-    <title>Protfolio - Ramesh Boggu</title>
+	<meta charset="UTF-8">
+	<meta property="og:title" content="My Data science Portfolio - Boggu Ramesh" />
+	<meta property="og:description" content="You can find here an updated list of projects and my data science work that i have been working on" />
+	<meta property="og:url" content="http://mohit2008.github.io/" />
+	<title>My Digital Portfolio - Boggu Ramesh</title>
+	<!-- CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
+	<link href="assets/css/animate.css" rel="stylesheet">
+    
+	<!-- Custom styles CSS -->
+	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+    
+    <script src="assets/js/modernizr.custom.js"></script>
+       
 </head>
 <body>
 
-    <!-- header section -->
-    <div class="header">
-        <div id="container">
-            <nav>
-                <img src="images/clg.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#" id="nhome">Home</a></li>
-                    <li><a href="#about" id="nabout">About</a></li>
-                    <li><a href="#services" id="nprojects">My Projects</a></li>
-                    <li><a href="#contact" id="ncontact">Contact Me</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header-text">
-            <h1>Hi, I'm <span>Ramesh Boggu</span><br> from IIT Kanpur.</h1>
-            <p>Pursuing M.Tech in Chemical Engineering</p>
-        </div>
-    </div>
+	<!-- Preloader -->
 
-    <!-- about section -->
-    <div class="about" id="about">
-        <div class="container-about">
-            <h1 class="sub-title">About</h1><br><br>
-            <p id="abt_text">Currently Pursuing M.Tech 2nd year in the department of Chemical Engineering at 
-                IIT Kanpur. Working with <a href='https://iitk.ac.in/new/raghvendra-singh' target="_blank">Dr.Raghvendra Singh</a> on <br>
-                <p class="sub-title1">"Analysis of VEGF Cell Migration Pathway of Angeogenesis".</p>
-            </p>
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/image-PhotoRoom.png">
-                </div>
-                <div class="about-col-2">
-                    <div class="tab-titles">
-                        <button class="tab-links active-link" onclick="opentab('skills')" id="skills-btn"> Skills </button>
-                        <button class="tab-links" onclick="opentab('expereince')" id="expereince-btn"> Experience </button>
-                        <button class="tab-links" onclick="opentab('education')" id="education-btn"> Education </button>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Proficient</span> <br>Python, MySQL, DSA, Machine Learning</li>
-                            <li><span>Familiar</span> <br>Java, JavaScript</li>
-                            <li><span>Web</span> <br>HTML, CSS </li>
-                            <li><span>Utilities</span> <br>Matlab, Ms-Excel, Power BI </li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="expereince">
-                        <ul>
-                            <li><span>Systems Engineer @ Infosys limited </span> <br><br><p>Jan'2021 - June'2022</p> <br>
-                            <h4>I have a professional background of 1.5 years as a Systems Engineer. My journey includes:
-                                <br><br>1. Served as a Junior Developer in the Omnihub-Dev Team for a year, during which I actively contributed to the creation of
-                                the backend Omnihub server for diverse client's needs.
-                                <br><br>2. Engaging in the training that spanned approximately 6 months, where I got knowledge of various courses such as Python, Data
-                                Structures and Algorithms (DSA), Database Management Systems (DBMS).
-                            </h4></li>
-        
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2022-Ongoing</span> <br>M.Tech in Chemical Engineering -  <nobr style="color: #ff004f;">9.17</nobr> / 10*
-                            <br>Indian Institute of Technology Kanpur <nobr style="color: aqua;">(IIT Kanpur)</nobr></li>
-                            <li><span>2016-2020</span> <br>B.Tech in Petrochemical Engineering - <nobr style="color: #ff004f;">8.45</nobr> / 10
-                            <br>University College of Engineering Kakinada: <nobr style="color: aqua;">JNTU Kakinada</nobr> (Autonomous) </li>
-                            <li><span>2014-2016</span> <br>Intermediate - <nobr style="color: #ff004f;">97.4</nobr>%
-                            <br>Aditya Junior College, Kakinada </li>
-                            <li><span>2014</span> <br>SSC - <nobr style="color: #ff004f;">9.8</nobr> / 10
-                            <br>Adarsha Vidyalaya EM High School, Pithapuram</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
 
-    <!-- projects -->
-    <div id="services">
-        <div id="container-ser">
-            <h1 class="sub-title-ser"> My Projects</h1>
-            <div class="service-list">
-                <div>
-                    <i class="fa-solid fa-flask"></i>
-                    <h2>Chemical Engineering</h2>
-                    <p>M.Tech Thesis:
-                        <br>Analysis of VEGF Cell Migration Pathway of Angiogenesis.</p>
-                    <br>
-                    <p>B.Tech Project:
-                        <br>Production of Biodegradable plastics from Tapioca.</p> 
-                </div>
-                <div>
-                    <i class="fa-solid fa-brain"></i>
-                    <h2>Machine Learning</h2>
-                    <a href="https://movierecommendationsystem-ramesh.streamlit.app/" target="_blank">Movie Recommendation System</a>
-                    <a href="https://github.com/rameshboggu36/customer_segregation" target="_blank">Customer Segregation</a>
-                    <a href="https://github.com/rameshboggu36/credit_card_fraud_detection" target="_blank">Credit Card Fraud Detection</a>
-                    <!-- <a href="https://github.com/rameshboggu36/breast_cancer_classification">Breast Cancer Classification</a> -->
-                </div>
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Development</h2>
-                    <a href="https://rameshboggu36.github.io/portfolio/" target="_blank">Portfolio</a><br>
-                    <a href="https://rameshboggu36.github.io/tic_ta_toe/" target="_blank">Tic-Tac-Toe</a><br>
-                    <a href="https://rameshboggu36.github.io/qr_code_generator/" target="_blank">QR-Code Generator</a><br>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- contact -->
-    <div id="contact">
-        <div class="container-con">
-            <h1 class="sub-title-con">Contact Me</h1>
-            <div class="row">
-                <div class="contact-left">
-                    <p><i class="fa-solid fa-envelope" ></i> rameshboggu999@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i> +91-7013510962</p>
-                    <div class="social-icons">
-                        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ramesh-boggu-ba7722156/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <a href="my_res.pdf" download class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your email" required>
-                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © Ramesh. </p>
-        </div>
-    </div>
+	<!-- Home start -->
 
-    <script type="text/javascript">    
-        window.onbeforeunload = function() { window.scrollTo(0,0); }
-        </script>
+	<section id="home" class="pfblock-image screen-height">
+        <div class="home-overlay"></div>
+		<div class="intro">
+			<h3>Hello, my name is </h3>
+			<h1>Boggu Ramesh</h1>
+			<h2>Data Scientist </h2>
+			<h3>using Quantitative, Statistical and Modelling techniques to unleash power from Data!!</h3>
+			<div class="social_media">
+				<a href="https://www.linkedin.com/in/ramesh-boggu-ba7722156/">
+					<i class="fa fa-linkedin-square fa-3x fa-fw"></i>
+				</a>
+				<a href="https://github.com/rameshboggu36">
+					<i class="fa fa-github fa-3x fa-fw"></i>
+				</a>
+
+			</div>
+		</div>
+        <a href="#services">
+		<div class="scroll-down">
+            <span>
+                <i class="fa fa-angle-down fa-3x"></i>
+            </span>
+		</div>
+        </a>
+
+	</section>
+
+	<!-- Home end -->
+
+	<!-- Navigation start -->
+
+	<header class="header">
+
+		<nav class="navbar navbar-custom" role="navigation">
+
+			<div class="container">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Boggu Ramesh</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="custom-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+						<li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#skills">Skills</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+
+			</div><!-- .container -->
+
+		</nav>
+
+	</header>
+
+	<!-- Navigation end -->
+
+    <!-- Services start -->
+
+	<section id="services" class="pfblock pfblock-gray">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 col-sm-offset-3">
+
+					<div class="pfblock-header wow fadeInUp">
+						<h2 class="pfblock-title">My current work</h2>
+						<div class="pfblock-line"></div>
+						<div class="pfblock-subtitle" align="justify" text-justify="distribute">
+							<br>I am a Data scientist with experience in building and deploying machine learning models. 
+                            I hold Master’s degree in Chemical Engineering from Indian Institute of Technology Kanpur (IIT Kanpur). 
+                            I had worked at Infosys first as a Systems Engineer Trainee for 6 months and then as a Junior Developer in Sterling Omnihub Dev team for 1 year.<br/>
+							
+              <br>I have a extensive background in performing EDA, Feature-Engineering/selection, Model Selection, Generation, Validation across both machine learning and deep learning along with 
+		fundamental understanding of Inferential/Descriptive/Predictive statistics.</br>
+						<br>I have deep understanding of CNN, RNN and other deep learning architectures.
+						I use Tensorflow and Keras to train deep neural net models.</br>
+					</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div><!-- .container -->
+	</section>
+
+	<!-- Services end -->
     
-    <script src="script.js"></script>
+	<!-- Portfolio start -->
+
+	<section id="portfolio" class="pfblock">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 col-sm-offset-3">
+
+					<div class="pfblock-header wow fadeInUp">
+						<h2 class="pfblock-title">My Projects</h2>
+						<div class="pfblock-line"></div>
+						<div class="pfblock-subtitle">
+							Here are some of my projects i have been working on....
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- .row -->
+            
+            
+            <div class="row">
+                
+	                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://github.com/rameshboggu36/Delhivery">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/data_preprocessing.png" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Data Preprocessing</span></h2>
+                                <p>Transforming the raw dataset into model ready</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+		    
+	                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://github.com/rameshboggu36/credit_card_fraud_detection">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/fraud1.webp" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Fraud Detection</span></h2>
+                                <p>Detect the fraudulent Credit Card transactions </p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+		    
+		    
+		            <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://github.com/rameshboggu36/movie_recommendation_system">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/movie.png" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Recommendation System</span></h2>
+                                <p>Content based Movie Recommendation upon user input</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+		    
+		    
+		    
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://github.com/rameshboggu36/customer_segregation">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/seg.png" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Customer Segregation</span></h2>
+                                <p>Classified Mall Customers using Unsupervised ML</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+            		<a href="https://github.com/rameshboggu36/pizza_sales">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/sales.webp" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Sales Analysis for strategic business insights</span></h2>
+                                <p>An end- to- end analysis of pizza sales</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                 	</a>
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 col-md-4">
+            		<a href="https://github.com/rameshboggu36/atm">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/atm.png" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Bank ATM Simulation</span></h2>
+                                <p>Designed an interactive Python-based ATM simulation</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+            </div>
+			
+			
+			
+		</div><!-- .contaier -->
+		
+
+	</section>
+
+	<!-- Portfolio end -->
+
+	<!-- Certification start  -->
+
+	<section id="certifications" class="pfblock pfblock-gray">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 col-sm-offset-3">
+
+					<div class="pfblock-header wow fadeInUp">
+						<h2 class="pfblock-title">My Certifications</h2>
+						<div class="pfblock-line"></div>
+						<div class="pfblock-subtitle">
+							Here are some of the latest certifications i have been certified on.
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- .row -->
+			
+			
+		<div class="row">
+                
+		<div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://coursera.org/share/8de79211900e990dc5092cf1200fad57">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/certificate-1.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Neural Networks and Deep Learning</span></h2>
+                                <p>DeepLearning.AI</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+	
+	      <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://coursera.org/share/05e31a9ab1d58ffe0f1c98dc775570af">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/cover-rep.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2><span>Supervised Machine Learning</span></h2>
+                                <p>DeepLearning.AI</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+			
+	       <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="https://coursera.org/share/0ca6bde5a6adf36d430c6dc9a439b96e">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/sql.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2><span>SQL for Data Science</span></h2>
+                                <p>University of California</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                    </a>
+                </div>
+
+	</div>
+	</div><!-- .contaier -->
+
+
+	</section>
+	<!-- Certification End  -->
+    
+    <!-- Skills start -->
+    
+    <section class="pfblock " id="skills">
+		
+			<div class="container">
+			
+				<div class="row skills">
+					
+					<div class="row">
+
+                        <div class="col-sm-6 col-sm-offset-3">
+
+                            <div class="pfblock-header wow fadeInUp">
+                                <h2 class="pfblock-title">My Skills</h2>
+                                <div class="pfblock-line"></div>
+                                <div class="pfblock-subtitle">
+                                    A data scientist need wide range of skills and knowledge to improve the decision-making process.
+									You name it. I have it.
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!-- .row -->
+					
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="90" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">90</span>
+                        </span>
+						<h3 class="text-center">Python</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="80" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">80</span>
+                        </span>
+						<h3 class="text-center">Machine Learning</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="60" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">60</span>
+                        </span>
+						<h3 class="text-center">Deep Learning</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="85" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">85</span>
+                        </span>
+						<h3 class="text-center">Data Visualisation</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="85" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">85</span>
+                        </span>
+						<h3 class="text-center">SQL</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="80" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">80</span>
+                        </span>
+						<h3 class="text-center">Statistics</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="70" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">70</span>
+                        </span>
+						<h3 class="text-center">Power BI</h3>
+					</div>
+					<div class="col-sm-6 col-md-3 text-center">
+						<span data-percent="60" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">60</span>
+                        </span>
+						<h3 class="text-center">Data Structures and Algorithm</h3>
+					</div>
+										
+				</div>
+			
+			</div>
+		
+
+        
+    </section>
+
+    <!-- Skills end -->
+
+	<!-- CallToAction start -->
+
+	<section id="contact" class="calltoaction">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-12 col-lg-12">
+					<h2 class="wow slideInRight" data-wow-delay=".1s"> Connect with me socially</h2>
+					<div class="calltoaction-decription wow slideInRight" data-wow-delay=".2s">
+					</div>
+				</div>
+
+				<div class="col-md-12 col-lg-12 calltoaction-btn wow slideInRight" data-wow-delay=".3s">
+					<a href="https://www.linkedin.com/in/ramesh-boggu-ba7722156/" class="btn btn-lg">Linkedin</a>
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+
+	
+	<!-- Footer start -->
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-12">
+
+					<ul class="social-links">
+						<li><a href="https://x.com/rameshboggu36" class="wow fadeInUp" data-wow-delay=".1s"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/ramesh-boggu-ba7722156/" class="wow fadeInUp" data-wow-delay=".2s"><i class="fa fa-linkedin-square"></i></a></li>
+					</ul>
+
+                    <p class="copyright">
+                        Boggu Ramesh || Data Science Portfolio 
+					</p>
+
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</footer>
+
+	<!-- Footer end -->
+
+	<!-- Scroll to top -->
+
+	<div class="scroll-up">
+		<a href="#home"><i class="fa fa-angle-up"></i></a>
+	</div>
+    
+    <!-- Scroll to top end-->
+
+	<!-- Javascript files -->
+
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.js"></script>
+	<script src="assets/js/jquery.sticky.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.easypiechart.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.cbpQTRotator.js"></script>
+	<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
+
+					</p>
+
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</footer>
+
+	<!-- Footer end -->
+
+	<!-- Scroll to top -->
+
+	<div class="scroll-up">
+		<a href="#home"><i class="fa fa-angle-up"></i></a>
+	</div>
+    
+    <!-- Scroll to top end-->
+
+	<!-- Javascript files -->
+
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.js"></script>
+	<script src="assets/js/jquery.sticky.js"></script>
+<!--	<script src="assets/js/smoothscroll.js"></script> -->
+	<script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.easypiechart.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.cbpQTRotator.js"></script>
+	<script src="assets/js/custom.js"></script>
+
 </body>
 </html>

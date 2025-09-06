@@ -1,156 +1,386 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/86a5c7776e.js" crossorigin="anonymous"></script>
-    <title>Protfolio - Ramesh Boggu</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ramesh Boggu — Portfolio</title>
+  <meta name="description" content="Personal website and portfolio of Ramesh Boggu — Data Scientist & Backend Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+          colors: {
+            // purple - indigo
+            // primary: {
+            //   50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81'
+            // }
+            // orange 
+            primary: {
+                    50:  '#FFF4F0', // very light (backgrounds)
+                    100: '#FFE0D6',
+                    200: '#FFBFAA',
+                    300: '#FF9D7D',
+                    400: '#FF7D52',
+                    500: '#FF612B', // base (your brand color)
+                    600: '#E65522',
+                    700: '#BF461C',
+                    800: '#993815',
+                    900: '#732A0F'  // darkest (text/accents)
+                  }
+          },
+          boxShadow: {
+            soft: '0 10px 30px -12px rgba(0,0,0,0.25)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-thumb { background: rgba(100,116,139,.5); border-radius: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+  </style>
 </head>
-<body>
-
-    <!-- header section -->
-    <div class="header">
-        <div id="container">
-            <nav>
-                <img src="images/clg.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#" id="nhome">Home</a></li>
-                    <li><a href="#about" id="nabout">About</a></li>
-                    <li><a href="#services" id="nprojects">My Projects</a></li>
-                    <li><a href="#contact" id="ncontact">Contact Me</a></li>
-                </ul>
-            </nav>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/70 border-b border-slate-200/50 dark:border-slate-800">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="group inline-flex items-center gap-3">
+          <div class="h-9 w-9 rounded-2xl bg-primary-600 text-white grid place-items-center shadow-soft group-hover:scale-105 transition-transform">RB</div>
+          <div class="text-slate-900 dark:text-white font-semibold tracking-tight">Ramesh Boggu</div>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#about" class="hover:text-primary-600">About</a>
+          <a href="#skills" class="hover:text-primary-600">Skills</a>
+          <a href="#projects" class="hover:text-primary-600">Projects</a>
+          <a href="#experience" class="hover:text-primary-600">Experience</a>
+          <a href="#contact" class="hover:text-primary-600">Contact</a>
         </div>
-        <div class="header-text">
-            <h1>Hi, I'm <span>Ramesh Boggu</span><br> from IIT Kanpur.</h1>
-            <p>Pursuing M.Tech in Chemical Engineering</p>
+        <div class="flex items-center gap-2">
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-primary-600 px-4 py-2 text-white hover:bg-primary-700 shadow-soft transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.4l-10 6.25L2 5.4V5Zm0 3.334V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.334l-9.322 5.823a2 2 0 0 1-2.156 0L2 8.334Z"/></svg>
+            Hire Me</a>
+
+          <button id="themeToggle" class="inline-flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800" aria-label="Toggle dark mode">
+            <svg id="sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zm10.48 14.32l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM1 13h3v-2H1v2zm19 0h3v-2h-3v2zM4.22 19.78l1.79-1.79-1.8-1.8-1.79 1.8 1.8 1.79zM18 6.34l1.79-1.8-1.8-1.79-1.79 1.79L18 6.34zM12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"/></svg>
+            <svg id="moon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+
+          <button class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 p-2" aria-label="Open menu" onclick="toggleMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="flex flex-col gap-2 text-sm font-medium">
+          <a onclick="toggleMobileMenu()" href="#about" class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+          <a onclick="toggleMobileMenu()" href="#skills" class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+          <a onclick="toggleMobileMenu()" href="#projects" class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+          <a onclick="toggleMobileMenu()" href="#experience" class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">Experience</a>
+          <a onclick="toggleMobileMenu()" href="#contact" class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary-50 to-white dark:from-slate-900/60 dark:to-slate-950"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="inline-flex items-center rounded-full bg-primary-100 text-primary-700 px-3 py-1 text-xs font-semibold ring-1 ring-inset ring-primary-300">Open to opportunities</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Data Scientist | Computer Vision Engineer
+        </h1>
+        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+            I build scalable AI solutions: OCR pipelines, face deduplication systems, and fraud prevention services. Previously @ Infosys, now Data Scientist @ TVS Credit.        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-white hover:bg-primary-700 shadow-soft">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h7v7H4V4zm0 9h7v7H4v-7zm9-9h7v7h-7V4zm0 9h7v7h-7v-7z"/></svg>
+            View Projects
+          </a>
+          <a href="/Users/bogguramesh/Desktop/portfolio/Boggu_Ramesh_Data_Scientist.pdf" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800" download>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4V7h3l-5-5z"/></svg>
+            Download Resume
+          </a>
+        </div>
+        <div class="mt-6 flex items-center gap-5 text-slate-500">
+          <a href="https://github.com/rameshboggu36" target="_blank" class="hover:text-slate-700 dark:hover:text-slate-200" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18a2.65 2.65 0 0 0-1.1-1.46c-.9-.62.07-.6.07-.6a2.1 2.1 0 0 1 1.53 1.03 2.13 2.13 0 0 0 2.9.83 2.13 2.13 0 0 1 .64-1.34c-2.22-.25-4.56-1.11-4.56-4.93A3.86 3.86 0 0 1 6.1 7.5a3.6 3.6 0 0 1 .1-2.66s.84-.27 2.75 1.03a9.46 9.46 0 0 1 5 0c1.9-1.3 2.74-1.03 2.74-1.03.37.84.4 1.8.1 2.66a3.86 3.86 0 0 1 1.03 2.68c0 3.83-2.34 4.68-4.57 4.93a2.4 2.4 0 0 1 .68 1.86v2.75c0 .26.18.58.68.48A10 10 0 0 0 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/boggu-ramesh-ba7722156/" target="_blank" class="hover:text-slate-700 dark:hover:text-slate-200" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor"><path d="M6.94 6.5a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88zM4.5 8.25h4.9V21H4.5V8.25zM14.2 8.25c-2.68 0-4.53 1.75-4.53 5v7.75h4.9v-6.88c0-1.83.66-3.08 2.33-3.08 1.27 0 1.98.86 1.98 2.75V21h4.87v-7.71c0-4.28-2.02-6.04-4.71-6.04-2.01 0-3.22.93-3.83 2.03h-.08V8.25H14.2z"/></svg>
+          </a>
+          <a href="mailto:rameshboggu999@gmail.com" class="hover:text-slate-700 dark:hover:text-slate-200" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="relative group w-[600px] h-[650px] overflow-hidden rounded-3xl shadow-soft border border-slate-200/60 dark:border-slate-800">
+          <div class="absolute -inset-6 -z-10 bg-gradient-to-tr from-primary-200/40 to-primary-400/20 blur-3xl rounded-3xl"></div>
+            <!-- Real image -->
+            <img src="public/IMG_6729.jpg"
+                alt="Original"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 real-img" />
+
+            <!-- Ghibli-style image -->
+            <img src="public/ghibili.png"
+                alt="Ghibli Style"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 ghibli-img" />
         </div>
     </div>
+  </section>
 
-    <!-- about section -->
-    <div class="about" id="about">
-        <div class="container-about">
-            <h1 class="sub-title">About</h1><br><br>
-            <p id="abt_text">Currently Pursuing M.Tech 2nd year in the department of Chemical Engineering at 
-                IIT Kanpur. Working with <a href='https://iitk.ac.in/new/raghvendra-singh' target="_blank">Dr.Raghvendra Singh</a> on <br>
-                <p class="sub-title1">"Analysis of VEGF Cell Migration Pathway of Angeogenesis".</p>
-            </p>
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/image-PhotoRoom.png">
-                </div>
-                <div class="about-col-2">
-                    <div class="tab-titles">
-                        <button class="tab-links active-link" onclick="opentab('skills')" id="skills-btn"> Skills </button>
-                        <button class="tab-links" onclick="opentab('expereince')" id="expereince-btn"> Experience </button>
-                        <button class="tab-links" onclick="opentab('education')" id="education-btn"> Education </button>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Proficient</span> <br>Python, MySQL, DSA, Machine Learning</li>
-                            <li><span>Familiar</span> <br>Java, JavaScript</li>
-                            <li><span>Web</span> <br>HTML, CSS </li>
-                            <li><span>Utilities</span> <br>Matlab, Ms-Excel, Power BI </li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="expereince">
-                        <ul>
-                            <li><span>Systems Engineer @ Infosys limited </span> <br><br><p>Jan'2021 - June'2022</p> <br>
-                            <h4>I have a professional background of 1.5 years as a Systems Engineer. My journey includes:
-                                <br><br>1. Served as a Junior Developer in the Omnihub-Dev Team for a year, during which I actively contributed to the creation of
-                                the backend Omnihub server for diverse client's needs.
-                                <br><br>2. Engaging in the training that spanned approximately 6 months, where I got knowledge of various courses such as Python, Data
-                                Structures and Algorithms (DSA), Database Management Systems (DBMS).
-                            </h4></li>
-        
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2022-Ongoing</span> <br>M.Tech in Chemical Engineering -  <nobr style="color: #ff004f;">9.17</nobr> / 10*
-                            <br>Indian Institute of Technology Kanpur <nobr style="color: aqua;">(IIT Kanpur)</nobr></li>
-                            <li><span>2016-2020</span> <br>B.Tech in Petrochemical Engineering - <nobr style="color: #ff004f;">8.45</nobr> / 10
-                            <br>University College of Engineering Kakinada: <nobr style="color: aqua;">JNTU Kakinada</nobr> (Autonomous) </li>
-                            <li><span>2014-2016</span> <br>Intermediate - <nobr style="color: #ff004f;">97.4</nobr>%
-                            <br>Aditya Junior College, Kakinada </li>
-                            <li><span>2014</span> <br>SSC - <nobr style="color: #ff004f;">9.8</nobr> / 10
-                            <br>Adarsha Vidyalaya EM High School, Pithapuram</li>
-                        </ul>
-                    </div>
-                </div>
+  <!-- About -->
+  <section id="about" class="py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight">About</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">I'm a Data Scientist and Computer Vision Engineer with a proven track record of architecting scalable AI solutions that drive measurable business impact. I don't just build models—I deliver production-ready solutions that scale. Whether it's processing millions of documents, preventing fraud in real-time, or integrating complex enterprise systems.</p>
+        </div>
+        <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <h3 class="font-semibold">Quick facts</h3>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li>🎓 MTech (IIT Kanpur), CGPA 9.17</li>
+              <li>💼 2.7 years experience (Data Science + Backend)</li>
+              <li>🧪 Specialization: Computer Vision & Gen AI</li>
+              <li>🏏 Plays cricket on weekends</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <h3 class="font-semibold">What I’m looking for</h3>
+            <p class="mt-3 text-sm">Senior Data Scientist or ML Engineer roles building practical AI features and analytics platforms. Ready to discuss how my computer vision expertise can drive your AI initiatives? Let's connect!</p>
+            <a href="#contact" class="mt-4 inline-flex text-sm items-center gap-2 rounded-xl bg-primary-600 px-4 py-2 text-white hover:bg-primary-700">Let’s talk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 bg-slate-50 dark:bg-slate-900/40">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight">Skills</h2>
+      <p class="mt-3 text-slate-600 dark:text-slate-300">Here are the tools I work with daily:</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Skill Card -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+          <h3 class="font-semibold">Languages & Databases</h3>
+          <div class="mt-3 flex flex-wrap gap-2 text-sm">
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Python</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">SQL</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">ChromaDB</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+          <h3 class="font-semibold">ML / DL</h3>
+          <div class="mt-3 flex flex-wrap gap-2 text-sm">
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">scikit‑learn</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">PyTorch</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">TensorFlow</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+          <h3 class="font-semibold">Data Analysis & Visualization</h3>
+          <div class="mt-3 flex flex-wrap gap-2 text-sm">
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">Pandas</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">NumPy</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">Seaborn</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">Tableau</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+          <h3 class="font-semibold">Applied AI Systems</h3>
+          <div class="mt-3 flex flex-wrap gap-2 text-sm">
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">OpenCV</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">YOLO</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">PaddleOCR</span>
+            <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border">LangChain</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight">Projects</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">A few things I’ve built recently.</p>
+        </div>
+        <a href="https://github.com/rameshboggu36?tab=repositories" target="_blank" class="text-sm underline underline-offset-4 hover:text-primary-600">All repos →</a>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- Project card template -->
+        <article class="group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-soft transition">
+          <img src="public/delhivery_project.webp" alt="Project" class="h-44 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold group-hover:text-primary-600">Delhivery Dataset: Feature Engineering and Hypothesis Testing</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Transformed the Delhivery dataset into a model-ready state through data cleaning, feature engineering, EDA, and hypothesis testing for statistical validation.</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Feature Engineering</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">EDA</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Hypothesis Testing</span>
             </div>
-        </div>
-    </div>
-
-    <!-- projects -->
-    <div id="services">
-        <div id="container-ser">
-            <h1 class="sub-title-ser"> My Projects</h1>
-            <div class="service-list">
-                <div>
-                    <i class="fa-solid fa-flask"></i>
-                    <h2>Chemical Engineering</h2>
-                    <p>M.Tech Thesis:
-                        <br>Analysis of VEGF Cell Migration Pathway of Angiogenesis.</p>
-                    <br>
-                    <p>B.Tech Project:
-                        <br>Production of Biodegradable plastics from Tapioca.</p> 
-                </div>
-                <div>
-                    <i class="fa-solid fa-brain"></i>
-                    <h2>Machine Learning</h2>
-                    <a href="https://movierecommendationsystem-ramesh.streamlit.app/" target="_blank">Movie Recommendation System</a>
-                    <a href="https://github.com/rameshboggu36/customer_segregation" target="_blank">Customer Segregation</a>
-                    <a href="https://github.com/rameshboggu36/credit_card_fraud_detection" target="_blank">Credit Card Fraud Detection</a>
-                    <!-- <a href="https://github.com/rameshboggu36/breast_cancer_classification">Breast Cancer Classification</a> -->
-                </div>
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Development</h2>
-                    <a href="https://rameshboggu36.github.io/portfolio/" target="_blank">Portfolio</a><br>
-                    <a href="https://rameshboggu36.github.io/tic_ta_toe/" target="_blank">Tic-Tac-Toe</a><br>
-                    <a href="https://rameshboggu36.github.io/qr_code_generator/" target="_blank">QR-Code Generator</a><br>
-                </div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/rameshboggu36/Delhivery" class="text-sm inline-flex items-center gap-1 hover:text-primary-600">Code <span>→</span></a>
             </div>
-        </div>
-    </div>
-    <!-- contact -->
-    <div id="contact">
-        <div class="container-con">
-            <h1 class="sub-title-con">Contact Me</h1>
-            <div class="row">
-                <div class="contact-left">
-                    <p><i class="fa-solid fa-envelope" ></i> rameshboggu999@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i> +91-7013510962</p>
-                    <div class="social-icons">
-                        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ramesh-boggu-ba7722156/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <a href="my_res.pdf" download class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your email" required>
-                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © Ramesh. </p>
-        </div>
-    </div>
+          </div>
+        </article>
 
-    <script type="text/javascript">    
-        window.onbeforeunload = function() { window.scrollTo(0,0); }
-        </script>
-    
-    <script src="script.js"></script>
+        <article class="group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-soft transition">
+          <img src="public/movie_recommendation_system_.png" alt="Project" class="h-44 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold group-hover:text-primary-600">Content‑Based Movie Recommender</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Developed a content-based movie recommendation system using Cosine Similarity, deployed with Streamlit for real-time personalized suggestions.</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">NLP</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Recommender</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Streamlit</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/rameshboggu36/movie_recommendation_system" class="text-sm inline-flex items-center gap-1 hover:text-primary-600">Code <span>→</span></a>
+              <a href="https://movierecommendationsystem-ramesh.streamlit.app/" class="text-sm inline-flex items-center gap-1 hover:text-primary-600">Demo <span>↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-soft transition">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Project" class="h-44 w-full object-cover"/>
+          <div class="p-5">
+            <h3 class="font-semibold group-hover:text-primary-600">Credit Card Fraud Detection</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Developed a machine learning model to detect fraudulent credit card transactions using classification algorithms and hyperparameter tuning.</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Hyperparameter Tuning</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Fraud Detection</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Model Evaluation</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/rameshboggu36/credit_card_fraud_detection" class="text-sm inline-flex items-center gap-1 hover:text-primary-600">Code <span>→</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience / Timeline -->
+  <section id="experience" class="py-16 bg-slate-50 dark:bg-slate-900/40">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight">Experience</h2>
+      <ol class="mt-8 relative border-s border-slate-200 dark:border-slate-800">
+        <li class="ms-6 py-6">
+          <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-white">1</span>
+          <h3 class="font-semibold">Data Scientist Intern — TVS Credit <span class="text-sm text-slate-500">(August, 2024 - Present)</span></h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Built OCR accuracy dashboards and optimized DL pipelines for large‑scale KYC processing.</p>
+        </li>
+        <li class="ms-6 py-6">
+          <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-white">2</span>
+          <h3 class="font-semibold">Systems Engineer — Infosys <span class="text-sm text-slate-500">(January, 2021 – June, 2022)</span></h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Omnichannel integrations, API development, and unit testing for enterprise clients.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-8 md:p-10">
+        <h2 class="text-3xl font-bold tracking-tight">Let’s work together</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">Have a project or role in mind? Send a message and I’ll get back to you.</p>
+        <form class="mt-8 grid gap-4" action="https://formsubmit.co/rameshboggu999@gmail.com" method="POST">
+          <!-- <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you"> -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New message from your portfolio site!">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm" for="name">Name</label>
+              <input id="name" name="name" type="text" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3" placeholder="Your name" />
+            </div>
+            <div>
+              <label class="text-sm" for="email">Email</label>
+              <input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div>
+            <label class="text-sm" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3" placeholder="Tell me about your project…"></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-white hover:bg-primary-700 shadow-soft">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <p>© <span id="year"></span> Ramesh Boggu. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#home" class="hover:text-primary-600">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: theme, year, mobile menu -->
+  <script>
+
+    setInterval(() => {
+    document.querySelector('.real-img').classList.toggle('opacity-0');
+    document.querySelector('.ghibli-img').classList.toggle('opacity-0');
+    }, 3000);
+
+    // Persist year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with persistence
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const sun = document.getElementById('sun');
+    const moon = document.getElementById('moon');
+
+    function setIcons() {
+      const dark = root.classList.contains('dark');
+      if (dark) { sun.classList.remove('hidden'); moon.classList.add('hidden'); }
+      else { sun.classList.add('hidden'); moon.classList.remove('hidden'); }
+    }
+
+    // Initialize theme from localStorage or system
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        root.classList.add('dark');
+      }
+      setIcons();
+      //document.getElementById('topNotice').classList.remove('hidden');
+    })();
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+      setIcons();
+    });
+
+    function toggleMobileMenu(){
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
